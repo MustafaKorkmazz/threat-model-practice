@@ -378,7 +378,7 @@
                   "id": "528607f2-03c9-45f2-a615-4b38b1e6ddbb",
                   "title": "Unauthorized API Access Using Stolen Credentials",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
                   "description": "An attacker may use stolen credentials or forged access tokens to impersonate a legitimate user and access protected Web Service endpoints.",
                   "mitigation": "Enforce multi-factor authentication, validate signed and short-lived access tokens, implement rate limiting and account lockout, secure session management, and log suspicious authentication attempts.",
@@ -415,13 +415,20 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 1,
                 "informationDisclosure": 0,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
