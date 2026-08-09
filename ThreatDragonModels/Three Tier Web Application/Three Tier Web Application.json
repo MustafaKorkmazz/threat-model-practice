@@ -399,16 +399,36 @@
                   "new": false,
                   "number": 6,
                   "score": ""
+                },
+                {
+                  "id": "992a463b-269a-4f3b-9bad-9dc884b927d1",
+                  "title": "Administrative Actions Cannot Be Reliably Attributed",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "If the Web Service does not create sufficient audit records for administrative actions, operations such as reservation cancellations or price changes cannot be reliably attributed to a specific user. A malicious or compromised administrator account may later deny performing these actions.",
+                  "mitigation": "Record the authenticated user identity, performed action, affected resource, previous and new values, UTC timestamp, IP address, session identifier, request ID, and operation result in tamper-resistant audit logs. Passwords and access tokens must never be written to logs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "spoofing": 1,
                 "tampering": 0,
-                "repudiation": 0,
+                "repudiation": 1,
                 "informationDisclosure": 0,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -865,6 +885,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "A product security team",
-    "threatTop": 7
+    "threatTop": 8
   }
 }
