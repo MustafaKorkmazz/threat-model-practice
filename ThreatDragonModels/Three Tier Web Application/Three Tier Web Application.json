@@ -364,6 +364,19 @@
                   "new": false,
                   "number": 3,
                   "score": ""
+                },
+                {
+                  "id": "6fa632cd-cc5f-433c-ad34-c4f6c2094766",
+                  "title": "Web Service Unavailability Caused by Request Flooding",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker may flood the tour search and reservation endpoints with excessive requests, overloading the Web Service and PostgreSQL database. This may prevent legitimate customers from accessing the application or completing reservations, resulting in financial loss and damage to customer trust.",
+                  "mitigation": "Apply rate limiting by IP address, user, and access token, and reject requests that exceed defined limits. Use WAF and DDoS protection, monitor suspicious traffic, and implement CAPTCHA, caching, request queues, and automatic scaling where appropriate.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -371,9 +384,16 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -830,6 +850,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "A product security team",
-    "threatTop": 5
+    "threatTop": 6
   }
 }
