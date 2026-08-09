@@ -390,8 +390,8 @@
                 "text": "PostgresSQL"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -487,7 +487,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -518,11 +518,24 @@
                   "new": false,
                   "number": 2,
                   "score": ""
+                },
+                {
+                  "id": "068d5f5f-dc89-4f43-af40-a354f65a09b0",
+                  "title": "Database Record Manipulation Through SQL Injection",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "If the Web Service includes untrusted user input in unsafe SQL queries, an attacker may modify or delete reservations, tour prices, and customer records stored in PostgreSQL. This could cause financial loss, loss of data integrity, and serious damage to customer trust.",
+                  "mitigation": "Use parameterized queries and prepared statements, validate inputs on the server, and grant the database account only the minimum required privileges. Hide detailed SQL errors from users and log suspicious database activity.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 0,
+                "tampering": 1,
                 "repudiation": 0,
                 "informationDisclosure": 2,
                 "denialOfService": 0,
@@ -817,6 +830,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "A product security team",
-    "threatTop": 4
+    "threatTop": 5
   }
 }
