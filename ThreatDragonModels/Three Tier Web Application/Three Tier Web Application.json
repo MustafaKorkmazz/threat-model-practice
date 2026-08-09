@@ -130,8 +130,8 @@
                 "text": "Web UI"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -227,12 +227,34 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4b5df751-7463-49ad-b72f-06e307400861",
+                  "title": "Unauthorized Access to Administrative Functions",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege",
+                  "description": "A regular user may attempt to gain administrative privileges by modifying client-side role information or directly calling administrative API endpoints. If the Web Service does not enforce server-side authorization, the attacker may change tour prices and cancel customer reservations.",
+                  "mitigation": "The Web Service must verify the user identity, token validity, role, and required permissions on the server for every sensitive request. Never trust client-provided role information, return 403 Forbidden for unauthorized requests, and record all administrative actions in an audit log.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -387,13 +409,6 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -850,6 +865,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "A product security team",
-    "threatTop": 6
+    "threatTop": 7
   }
 }
